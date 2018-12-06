@@ -1,0 +1,782 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第四节 快速排序 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="希尔排序.html" />
+    
+    
+    <link rel="prev" href="插入排序.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前 言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter0/">
+            
+                <a href="../Chapter0/">
+            
+                    
+                    引 子
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter0/第一个程序.html">
+            
+                <a href="../Chapter0/第一个程序.html">
+            
+                    
+                    第一节 第一个程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter0/第一次尝试.html">
+            
+                <a href="../Chapter0/第一次尝试.html">
+            
+                    
+                    第二节 第一次尝试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter0/算法的提出.html">
+            
+                <a href="../Chapter0/算法的提出.html">
+            
+                    
+                    第三节 算法的提出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter0/第二次尝试.html">
+            
+                <a href="../Chapter0/第二次尝试.html">
+            
+                    
+                    第四节 第二次尝试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter0/算法效率衡量.html">
+            
+                <a href="../Chapter0/算法效率衡量.html">
+            
+                    
+                    第五节 算法效率衡量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Chapter0/算法分析.html">
+            
+                <a href="../Chapter0/算法分析.html">
+            
+                    
+                    第六节 算法分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Chapter0/常见时间复杂度.html">
+            
+                <a href="../Chapter0/常见时间复杂度.html">
+            
+                    
+                    第七节 常见时间复杂度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    第一章 顺序表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter1/顺序表的基本形式.html">
+            
+                <a href="../Chapter1/顺序表的基本形式.html">
+            
+                    
+                    第一节 顺序表的基本形式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter1/顺序表的结构与实现.html">
+            
+                <a href="../Chapter1/顺序表的结构与实现.html">
+            
+                    
+                    第二节 顺序表的结构与实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Chapter1/顺序表的操作.html">
+            
+                <a href="../Chapter1/顺序表的操作.html">
+            
+                    
+                    第三节 顺序表的操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Chapter1/python中的顺序表.html">
+            
+                <a href="../Chapter1/python中的顺序表.html">
+            
+                    
+                    第四节 python中的顺序表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    第二章 链表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Chapter2/单向链表.html">
+            
+                <a href="../Chapter2/单向链表.html">
+            
+                    
+                    第一节 单向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Chapter2/单向循环链表.html">
+            
+                <a href="../Chapter2/单向循环链表.html">
+            
+                    
+                    第二节 单向循环链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Chapter2/双向链表.html">
+            
+                <a href="../Chapter2/双向链表.html">
+            
+                    
+                    第三节 双向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    第三章 栈
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter3/栈结构实现.html">
+            
+                <a href="../Chapter3/栈结构实现.html">
+            
+                    
+                    第一节 栈结构实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    第四章 队列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Chapter4/队列的实现.html">
+            
+                <a href="../Chapter4/队列的实现.html">
+            
+                    
+                    第一节 队列的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Chapter4/双端队列.html">
+            
+                <a href="../Chapter4/双端队列.html">
+            
+                    
+                    第二节 双端队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第五章 排序与搜索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="冒泡排序.html">
+            
+                <a href="冒泡排序.html">
+            
+                    
+                    第一节 冒泡排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="选择排序.html">
+            
+                <a href="选择排序.html">
+            
+                    
+                    第二节 选择排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="插入排序.html">
+            
+                <a href="插入排序.html">
+            
+                    
+                    第三节 插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.4" data-path="快速排序.html">
+            
+                <a href="快速排序.html">
+            
+                    
+                    第四节 快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="希尔排序.html">
+            
+                <a href="希尔排序.html">
+            
+                    
+                    第五节 希尔排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="归并排序.html">
+            
+                <a href="归并排序.html">
+            
+                    
+                    第六节 归并排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="常见排序算法效率分析.html">
+            
+                <a href="常见排序算法效率分析.html">
+            
+                    
+                    第七节 常见排序算法效率分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="搜索.html">
+            
+                <a href="搜索.html">
+            
+                    
+                    第八节 搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Chapter6/">
+            
+                <a href="../Chapter6/">
+            
+                    
+                    第六章 树
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Chapter6/二叉树.html">
+            
+                <a href="../Chapter6/二叉树.html">
+            
+                    
+                    第一节 二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Chapter6/二叉树的遍历.html">
+            
+                <a href="../Chapter6/二叉树的遍历.html">
+            
+                    
+                    第二节 二叉树的遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第四节 快速排序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h1>
+<hr>
+<h2 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h2>
+<p><strong>&#x5FEB;&#x901F;&#x6392;&#x5E8F;</strong>&#xFF08;&#x82F1;&#x8BED;&#xFF1A;Quicksort&#xFF09;&#xFF0C;&#x53C8;&#x79F0;&#x5212;&#x5206;&#x4EA4;&#x6362;&#x6392;&#x5E8F;&#xFF08;partition-exchange sort&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x8D9F;&#x6392;&#x5E8F;&#x5C06;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x6570;&#x636E;&#x5206;&#x5272;&#x6210;&#x72EC;&#x7ACB;&#x7684;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x90FD;&#x6BD4;&#x53E6;&#x5916;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x90FD;&#x8981;&#x5C0F;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6309;&#x6B64;&#x65B9;&#x6CD5;&#x5BF9;&#x8FD9;&#x4E24;&#x90E8;&#x5206;&#x6570;&#x636E;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF0C;&#x6574;&#x4E2A;&#x6392;&#x5E8F;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x9012;&#x5F52;&#x8FDB;&#x884C;&#xFF0C;&#x4EE5;&#x6B64;&#x8FBE;&#x5230;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x53D8;&#x6210;&#x6709;&#x5E8F;&#x5E8F;&#x5217;&#x3002;</p>
+<p><img src="images/&#x63D2;&#x5165;&#x6392;&#x5E8F;.gif" alt=""></p>
+<h2 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x8FD0;&#x4F5C;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x8FD0;&#x4F5C;</h2>
+<ul>
+<li>&#x4ECE;&#x6570;&#x5217;&#x4E2D;&#x6311;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x79F0;&#x4E3A;&quot;&#x57FA;&#x51C6;&quot;&#xFF08;pivot&#xFF09;&#xFF0C;</li>
+<li>&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x6570;&#x5217;&#xFF0C;&#x6240;&#x6709;&#x5143;&#x7D20;&#x6BD4;&#x57FA;&#x51C6;&#x503C;&#x5C0F;&#x7684;&#x6446;&#x653E;&#x5728;&#x57FA;&#x51C6;&#x524D;&#x9762;&#xFF0C;&#x6240;&#x6709;&#x5143;&#x7D20;&#x6BD4;&#x57FA;&#x51C6;&#x503C;&#x5927;&#x7684;&#x6446;&#x5728;&#x57FA;&#x51C6;&#x7684;&#x540E;&#x9762;&#xFF08;&#x76F8;&#x540C;&#x7684;&#x6570;&#x53EF;&#x4EE5;&#x5230;&#x4EFB;&#x4E00;&#x8FB9;&#xFF09;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;&#x8BE5;&#x57FA;&#x51C6;&#x5C31;&#x5904;&#x4E8E;&#x6570;&#x5217;&#x7684;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x4E2A;&#x79F0;&#x4E3A;&#x5206;&#x533A;&#xFF08;partition&#xFF09;&#x64CD;&#x4F5C;&#x3002;</li>
+<li>&#x9012;&#x5F52;&#x5730;&#xFF08;recursive&#xFF09;&#x628A;&#x5C0F;&#x4E8E;&#x57FA;&#x51C6;&#x503C;&#x5143;&#x7D20;&#x7684;&#x5B50;&#x6570;&#x5217;&#x548C;&#x5927;&#x4E8E;&#x57FA;&#x51C6;&#x503C;&#x5143;&#x7D20;&#x7684;&#x5B50;&#x6570;&#x5217;&#x6392;&#x5E8F;&#x3002;</li>
+</ul>
+<p>&#x9012;&#x5F52;&#x7684;&#x6700;&#x5E95;&#x90E8;&#x60C5;&#x5F62;&#xFF0C;&#x662F;&#x6570;&#x5217;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x96F6;&#x6216;&#x4E00;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x6C38;&#x8FDC;&#x90FD;&#x5DF2;&#x7ECF;&#x88AB;&#x6392;&#x5E8F;&#x597D;&#x4E86;&#x3002;&#x867D;&#x7136;&#x4E00;&#x76F4;&#x9012;&#x5F52;&#x4E0B;&#x53BB;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x603B;&#x4F1A;&#x7ED3;&#x675F;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x6BCF;&#x6B21;&#x7684;&#x8FED;&#x4EE3;&#xFF08;iteration&#xFF09;&#x4E2D;&#xFF0C;&#x5B83;&#x81F3;&#x5C11;&#x4F1A;&#x628A;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6446;&#x5230;&#x5B83;&#x6700;&#x540E;&#x7684;&#x4F4D;&#x7F6E;&#x53BB;&#x3002;</p>
+<h2 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x7684;&#x5B9E;&#x73B0;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x7684;&#x5B9E;&#x73B0;</h2>
+<pre><code>def quick_sort(alist, start, end):
+    &quot;&quot;&quot;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&quot;&quot;&quot;
+
+    # &#x9012;&#x5F52;&#x7684;&#x9000;&#x51FA;&#x6761;&#x4EF6;
+    if start &gt;= end:
+        return
+
+    # &#x8BBE;&#x5B9A;&#x8D77;&#x59CB;&#x5143;&#x7D20;&#x4E3A;&#x8981;&#x5BFB;&#x627E;&#x4F4D;&#x7F6E;&#x7684;&#x57FA;&#x51C6;&#x5143;&#x7D20;
+    mid = alist[start]
+
+    # low&#x4E3A;&#x5E8F;&#x5217;&#x5DE6;&#x8FB9;&#x7684;&#x7531;&#x5DE6;&#x5411;&#x53F3;&#x79FB;&#x52A8;&#x7684;&#x6E38;&#x6807;
+    low = start
+
+    # high&#x4E3A;&#x5E8F;&#x5217;&#x53F3;&#x8FB9;&#x7684;&#x7531;&#x53F3;&#x5411;&#x5DE6;&#x79FB;&#x52A8;&#x7684;&#x6E38;&#x6807;
+    high = end
+
+    while low &lt; high:
+        # &#x5982;&#x679C;low&#x4E0E;high&#x672A;&#x91CD;&#x5408;&#xFF0C;high&#x6307;&#x5411;&#x7684;&#x5143;&#x7D20;&#x4E0D;&#x6BD4;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x5C0F;&#xFF0C;&#x5219;high&#x5411;&#x5DE6;&#x79FB;&#x52A8;
+        while low &lt; high and alist[high] &gt;= mid:
+            high -= 1
+        # &#x5C06;high&#x6307;&#x5411;&#x7684;&#x5143;&#x7D20;&#x653E;&#x5230;low&#x7684;&#x4F4D;&#x7F6E;&#x4E0A;
+        alist[low] = alist[high]
+
+        # &#x5982;&#x679C;low&#x4E0E;high&#x672A;&#x91CD;&#x5408;&#xFF0C;low&#x6307;&#x5411;&#x7684;&#x5143;&#x7D20;&#x6BD4;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x5C0F;&#xFF0C;&#x5219;low&#x5411;&#x53F3;&#x79FB;&#x52A8;
+        while low &lt; high and alist[low] &lt; mid:
+            low += 1
+        # &#x5C06;low&#x6307;&#x5411;&#x7684;&#x5143;&#x7D20;&#x653E;&#x5230;high&#x7684;&#x4F4D;&#x7F6E;&#x4E0A;
+        alist[high] = alist[low]
+
+    # &#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x540E;&#xFF0C;low&#x4E0E;high&#x91CD;&#x5408;&#xFF0C;&#x6B64;&#x65F6;&#x6240;&#x6307;&#x4F4D;&#x7F6E;&#x4E3A;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x7684;&#x6B63;&#x786E;&#x4F4D;&#x7F6E;
+    # &#x5C06;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x653E;&#x5230;&#x8BE5;&#x4F4D;&#x7F6E;
+    alist[low] = mid
+
+    # &#x5BF9;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x5DE6;&#x8FB9;&#x7684;&#x5B50;&#x5E8F;&#x5217;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;
+    quick_sort(alist, start, low-1)
+
+    # &#x5BF9;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x53F3;&#x8FB9;&#x7684;&#x5B50;&#x5E8F;&#x5217;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;
+    quick_sort(alist, low+1, end)
+
+
+alist = [54,26,93,17,77,31,44,55,20]
+quick_sort(alist,0,len(alist)-1)
+print(alist)
+</code></pre><h2 id="&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;">&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</h2>
+<ul>
+<li>&#x6700;&#x4F18;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(nlogn)</li>
+<li>&#x6700;&#x574F;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;O(n2)</li>
+<li>&#x7A33;&#x5B9A;&#x6027;&#xFF1A;&#x4E0D;&#x7A33;&#x5B9A;</li>
+</ul>
+<p>&#x4ECE;&#x4E00;&#x5F00;&#x59CB;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x5E73;&#x5747;&#x9700;&#x8981;&#x82B1;&#x8D39;O(n log n)&#x65F6;&#x95F4;&#x7684;&#x63CF;&#x8FF0;&#x5E76;&#x4E0D;&#x660E;&#x663E;&#x3002;&#x4F46;&#x662F;&#x4E0D;&#x96BE;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x662F;&#x5206;&#x533A;&#x8FD0;&#x7B97;&#xFF0C;&#x6570;&#x7EC4;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x5728;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x4E2D;&#x8D70;&#x8BBF;&#x8FC7;&#x4E00;&#x6B21;&#xFF0C;&#x4F7F;&#x7528;O(n)&#x7684;&#x65F6;&#x95F4;&#x3002;&#x5728;&#x4F7F;&#x7528;&#x7ED3;&#x5408;&#xFF08;concatenation&#xFF09;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x8FD9;&#x9879;&#x8FD0;&#x7B97;&#x4E5F;&#x662F;O(n)&#x3002;</p>
+<p>&#x5728;&#x6700;&#x597D;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6BCF;&#x6B21;&#x6211;&#x4EEC;&#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x5206;&#x533A;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x628A;&#x4E00;&#x4E2A;&#x6570;&#x5217;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x51E0;&#x8FD1;&#x76F8;&#x7B49;&#x7684;&#x7247;&#x6BB5;&#x3002;&#x8FD9;&#x4E2A;&#x610F;&#x601D;&#x5C31;&#x662F;&#x6BCF;&#x6B21;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x5904;&#x7406;&#x4E00;&#x534A;&#x5927;&#x5C0F;&#x7684;&#x6570;&#x5217;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x5230;&#x8FBE;&#x5927;&#x5C0F;&#x4E3A;&#x4E00;&#x7684;&#x6570;&#x5217;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8981;&#x4F5C;log n&#x6B21;&#x5D4C;&#x5957;&#x7684;&#x8C03;&#x7528;&#x3002;&#x8FD9;&#x4E2A;&#x610F;&#x601D;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x662F;O(log n)&#x3002;&#x4F46;&#x662F;&#x5728;&#x540C;&#x4E00;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x7684;&#x4E24;&#x4E2A;&#x7A0B;&#x5E8F;&#x8C03;&#x7528;&#x4E2D;&#xFF0C;&#x4E0D;&#x4F1A;&#x5904;&#x7406;&#x5230;&#x539F;&#x6765;&#x6570;&#x5217;&#x7684;&#x76F8;&#x540C;&#x90E8;&#x5206;&#xFF1B;&#x56E0;&#x6B64;&#xFF0C;&#x7A0B;&#x5E8F;&#x8C03;&#x7528;&#x7684;&#x6BCF;&#x4E00;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x603B;&#x5171;&#x5168;&#x90E8;&#x4EC5;&#x9700;&#x8981;O(n)&#x7684;&#x65F6;&#x95F4;&#xFF08;&#x6BCF;&#x4E2A;&#x8C03;&#x7528;&#x6709;&#x67D0;&#x4E9B;&#x5171;&#x540C;&#x7684;&#x989D;&#x5916;&#x8017;&#x8D39;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x5728;&#x6BCF;&#x4E00;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x4EC5;&#x4EC5;&#x53EA;&#x6709;O(n)&#x4E2A;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x4E9B;&#x88AB;&#x5F52;&#x7EB3;&#x5728;O(n)&#x7CFB;&#x6570;&#x4E2D;&#xFF09;&#x3002;&#x7ED3;&#x679C;&#x662F;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x4EC5;&#x9700;&#x4F7F;&#x7528;O(n log n)&#x65F6;&#x95F4;&#x3002;</p>
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="插入排序.html" class="navigation navigation-prev " aria-label="Previous page: 第三节 插入排序">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="希尔排序.html" class="navigation navigation-next " aria-label="Next page: 第五节 希尔排序">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第四节 快速排序","level":"1.7.4","depth":2,"next":{"title":"第五节 希尔排序","level":"1.7.5","depth":2,"path":"Chapter5/希尔排序.md","ref":"Chapter5/希尔排序.md","articles":[]},"previous":{"title":"第三节 插入排序","level":"1.7.3","depth":2,"path":"Chapter5/插入排序.md","ref":"Chapter5/插入排序.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter5/快速排序.md","mtime":"2018-12-05T11:50:43.276Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-05T12:39:25.758Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
