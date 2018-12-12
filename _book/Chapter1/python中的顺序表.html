@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第四节 python中的顺序表 · GitBook</title>
+        <title>第四节 python中的顺序表 · python 数据结构与算法</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Faner">
         
         
     
@@ -17,11 +17,23 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-vs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
                 
             
                 
@@ -32,8 +44,6 @@
 
     
 
-    
-        
     
         
     
@@ -71,7 +81,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +92,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://www.seule.cn" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -593,7 +612,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -652,7 +671,9 @@
 <p>&#x5728;Python&#x7684;&#x5B98;&#x65B9;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;<strong>list&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x91C7;&#x7528;&#x5206;&#x79BB;&#x5F0F;&#x6280;&#x672F;&#x5B9E;&#x73B0;&#x7684;&#x52A8;&#x6001;&#x987A;&#x5E8F;&#x8868;&#x3002;</strong>&#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x7528;list.append(x) &#xFF08;&#x6216; list.insert(len(list), x)&#xFF0C;&#x5373;&#x5C3E;&#x90E8;&#x63D2;&#x5165;&#xFF09;&#x6BD4;&#x5728;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x6548;&#x7387;&#x9AD8;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
 <p>&#x5728;Python&#x7684;&#x5B98;&#x65B9;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;list&#x5B9E;&#x73B0;&#x91C7;&#x7528;&#x4E86;&#x5982;&#x4E0B;&#x7684;&#x7B56;&#x7565;&#xFF1A;&#x5728;&#x5EFA;&#x7ACB;&#x7A7A;&#x8868;&#xFF08;&#x6216;&#x8005;&#x5F88;&#x5C0F;&#x7684;&#x8868;&#xFF09;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x4E00;&#x5757;&#x80FD;&#x5BB9;&#x7EB3;8&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5B58;&#x50A8;&#x533A;&#xFF1B;&#x5728;&#x6267;&#x884C;&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#xFF08;insert&#x6216;append&#xFF09;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x5143;&#x7D20;&#x5B58;&#x50A8;&#x533A;&#x6EE1;&#x5C31;&#x6362;&#x4E00;&#x5757;4&#x500D;&#x5927;&#x7684;&#x5B58;&#x50A8;&#x533A;&#x3002;&#x4F46;&#x5982;&#x679C;&#x6B64;&#x65F6;&#x7684;&#x8868;&#x5DF2;&#x7ECF;&#x5F88;&#x5927;&#xFF08;&#x76EE;&#x524D;&#x7684;&#x9600;&#x503C;&#x4E3A;50000&#xFF09;&#xFF0C;&#x5219;&#x6539;&#x53D8;&#x7B56;&#x7565;&#xFF0C;&#x91C7;&#x7528;&#x52A0;&#x4E00;&#x500D;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5F15;&#x5165;&#x8FD9;&#x79CD;&#x6539;&#x53D8;&#x7B56;&#x7565;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x51FA;&#x73B0;&#x8FC7;&#x591A;&#x7A7A;&#x95F2;&#x7684;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;&#x3002;</p>
 <hr>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Faner 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-12-01 09:13:53
+</span></footer>
                                 
                                 </section>
                             
@@ -695,7 +716,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第四节 python中的顺序表","level":"1.3.4","depth":2,"next":{"title":"第二章 链表","level":"1.4","depth":1,"path":"Chapter2/README.md","ref":"Chapter2/README.md","articles":[{"title":"第一节 单向链表","level":"1.4.1","depth":2,"path":"Chapter2/单向链表.md","ref":"Chapter2/单向链表.md","articles":[]},{"title":"第二节 单向循环链表","level":"1.4.2","depth":2,"path":"Chapter2/单向循环链表.md","ref":"Chapter2/单向循环链表.md","articles":[]},{"title":"第三节 双向链表","level":"1.4.3","depth":2,"path":"Chapter2/双向链表.md","ref":"Chapter2/双向链表.md","articles":[]}]},"previous":{"title":"第三节 顺序表的操作","level":"1.3.3","depth":2,"path":"Chapter1/顺序表的操作.md","ref":"Chapter1/顺序表的操作.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/python中的顺序表.md","mtime":"2018-12-01T01:13:53.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-06T14:53:52.859Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第四节 python中的顺序表","level":"1.3.4","depth":2,"next":{"title":"第二章 链表","level":"1.4","depth":1,"path":"Chapter2/README.md","ref":"Chapter2/README.md","articles":[{"title":"第一节 单向链表","level":"1.4.1","depth":2,"path":"Chapter2/单向链表.md","ref":"Chapter2/单向链表.md","articles":[]},{"title":"第二节 单向循环链表","level":"1.4.2","depth":2,"path":"Chapter2/单向循环链表.md","ref":"Chapter2/单向循环链表.md","articles":[]},{"title":"第三节 双向链表","level":"1.4.3","depth":2,"path":"Chapter2/双向链表.md","ref":"Chapter2/双向链表.md","articles":[]}]},"previous":{"title":"第三节 顺序表的操作","level":"1.3.3","depth":2,"path":"Chapter1/顺序表的操作.md","ref":"Chapter1/顺序表的操作.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","github","splitter","mermaid","prism","-highlight","-sharing","sharing-plus","tbfed-pagefooter","expandable-chapters-small","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Faner 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-vs.css"]},"github":{"url":"https://github.com/Seule-Seule"},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"mermaid":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Faner","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python 数据结构与算法","language":"zh-hans","links":{"sidebar":{"Home":"https://www.seule.cn"}},"gitbook":"*","description":"基于 pyhton 的基础数据结构与算法的实现，目的是练习 python 语言","direction":"ltr"},"file":{"path":"Chapter1/python中的顺序表.md","mtime":"2018-12-01T01:13:53.170Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-12T05:07:05.144Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -705,27 +726,31 @@
     <script src="../gitbook/theme.js"></script>
     
         
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

@@ -1,0 +1,76 @@
+{
+    "title": "python 数据结构与算法",
+    "description": "基于 pyhton 的基础数据结构与算法的实现，目的是练习 python 语言",
+    "author" : "Faner",
+    "language": "zh-hans",
+    "direction": "ltr",
+    "links" : {
+        "sidebar" : {
+            "Home" : "https://www.seule.cn"
+        }
+    },
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    },
+    "plugins": [
+        "-lunr",
+        "-search",
+        "search-pro",
+        "github",
+        "splitter",
+        "mermaid",
+        "prism",
+        "-highlight",
+        "-sharing",
+        "sharing-plus",
+        "tbfed-pagefooter",
+        "expandable-chapters-small"
+    ],
+    "pluginsConfig": {
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord" : ["Gitbook Use"]
+        },
+        "github": {
+            "url": "https://github.com/Seule-Seule"
+        },
+        "prism": {
+            "css": [
+                "prismjs/themes/prism-vs.css"
+            ]
+        },
+        "sharing": {
+            "douban": false,
+            "facebook": false,
+            "google": true,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": true,
+            "linkedin": true,
+            "messenger": false,
+            "pocket": false,
+            "qq": true,
+            "qzone": true,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false,
+            "all": [
+                "facebook", "google", "twitter",
+                "weibo", "instapaper", "linkedin",
+                "pocket", "stumbleupon"
+            ]
+        },
+        "tbfed-pagefooter": {
+            "copyright":"Copyright &copy Faner 2018",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    }
+}
